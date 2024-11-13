@@ -1,21 +1,21 @@
 <?php
-// Include database connection
+
 include 'db.php';
 
-// Handle registration process
+
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Check if passwords match
+
     if ($password !== $confirm_password) {
         $error = "Passwords do not match!";
     } else {
         // Hash the password for security
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Check if the username already exists
+      
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch();
@@ -133,7 +133,7 @@ if (isset($_POST['register'])) {
     <div class="form-container">
         <h2>Register</h2>
 
-        <!-- Display any error or success messages -->
+      
         <?php if (isset($error)): ?>
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
@@ -142,7 +142,7 @@ if (isset($_POST['register'])) {
             <div class="success"><?php echo $success; ?></div>
         <?php endif; ?>
 
-        <!-- Registration form -->
+       
         <form method="POST" action="">
             <input type="text" name="username" placeholder="Username" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
