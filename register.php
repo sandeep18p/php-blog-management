@@ -12,7 +12,7 @@ if (isset($_POST['register'])) {
     if ($password !== $confirm_password) {
         $error = "Passwords do not match!";
     } else {
-        // Hash the password for security
+      
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
       
@@ -40,7 +40,7 @@ if (isset($_POST['register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        /* General Body Styling */
+      
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -52,7 +52,7 @@ if (isset($_POST['register'])) {
             height: 100vh;
         }
 
-        /* Form Container Styling */
+       
         .form-container {
             width: 100%;
             max-width: 400px;
@@ -62,14 +62,14 @@ if (isset($_POST['register'])) {
             border-radius: 8px;
         }
 
-        /* Heading Styling */
+     
         .form-container h2 {
             text-align: center;
             color: #333;
             margin-bottom: 20px;
         }
 
-        /* Input Fields and Button Styling */
+      
         .form-container input,
         .form-container button {
             width: 100%;
@@ -81,7 +81,7 @@ if (isset($_POST['register'])) {
             font-size: 16px;
         }
 
-        /* Button Styling */
+    
         button {
             background-color: #4CAF50;
             color: white;
@@ -93,7 +93,7 @@ if (isset($_POST['register'])) {
             background-color: #45a049;
         }
 
-        /* Links Styling */
+    
         a {
             display: block;
             text-align: center;
