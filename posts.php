@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Create post
+
 if (isset($_POST['create'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -20,7 +20,7 @@ if (isset($_POST['create'])) {
     exit;
 }
 
-// Edit post
+
 if (isset($_POST['edit'])) {
     $id = $_POST['id'];
     $title = $_POST['title'];
@@ -33,7 +33,7 @@ if (isset($_POST['edit'])) {
     header('Location: dashboard.php');
 }
 
-// Delete post
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
@@ -44,7 +44,7 @@ if (isset($_GET['delete'])) {
     header('Location: dashboard.php');
 }
 
-// Fetch all posts
+
 $stmt = $pdo->prepare("SELECT * FROM posts ORDER BY created_at DESC");
 $stmt->execute();
 $posts = $stmt->fetchAll();
