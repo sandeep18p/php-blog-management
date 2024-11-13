@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-// Login process
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     }
 }
 
-// Register process
+
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
